@@ -1,4 +1,5 @@
 traitlets
 jetcam
+numpy==1.19.0
 opencv-python
 
