@@ -1,0 +1,23 @@
+from .video_reader import VideoReader
+from jetcam.usb_camera import USBCamera
+from PIL import Image
+import time
+import numpy as np
+
+class VideoCSIReader(VideoReader):
+    
+    def __init__(self, deviceid=0):
+        self._camera = USBCamera(capture_device=deviceid, width=224, height=224, capture_width=400, capture_height=300)
+            
+    def read_frame(self,  show_preview=False):
+        img = self._camera.read()
+        
+        if img is None:
+            return None
+            
+        if show_preview:
+            cv2.imshow("preview", img)
+            cv2.waitKey(1)
+        
+        return img
+        
