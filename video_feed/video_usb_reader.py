@@ -4,10 +4,11 @@ from PIL import Image
 import time
 import numpy as np
 
-class VideoCSIReader(VideoReader):
+class VideoUSBReader(VideoReader):
     
     def __init__(self, deviceid=0):
-        self._camera = USBCamera(capture_device=deviceid, width=224, height=224, capture_width=400, capture_height=300)
+        self._camera = USBCamera(capture_device=0) 
+                # width=224, height=224, capture_width=400, capture_height=300)
             
     def read_frame(self,  show_preview=False):
         img = self._camera.read()

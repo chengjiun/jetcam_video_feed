@@ -1,2 +1,4 @@
 traitlets
 jetcam
+opencv-python
+
