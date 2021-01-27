@@ -1,5 +1,6 @@
 from .video_reader import VideoReader
 from jetcam.usb_camera import USBCamera
+import cv2
 from PIL import Image
 import time
 import numpy as np
